@@ -1,0 +1,20 @@
+// Breakpoint Mixins (Mobile First)
+// 320px, 641px, 1024px, 1281px
+
+@mixin respond-to-sm {
+    @media (min-width: 641px) {
+        @content;
+    }
+}
+
+@mixin respond-to-md {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin respond-to-lg {
+    @media (min-width: 1281px) {
+        @content;
+    }
+}

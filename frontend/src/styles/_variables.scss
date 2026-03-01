@@ -1,0 +1,38 @@
+// Variables for CipherSQL Studio - Premium Dark Theme
+$color-primary: #8b5cf6; // Vibrant Purple
+$color-primary-dark: #7c3aed;
+$color-secondary: #06b6d4; // Cyan accent
+$color-bg: #0f172a; // Deep slate
+$color-bg-gradient: linear-gradient(135deg, #09090b 0%, #1e1b4b 100%);
+$color-surface: rgba(255, 255, 255, 0.05);
+$color-border: rgba(255, 255, 255, 0.1);
+$color-text: #f8fafc;
+$color-text-muted: #94a3b8;
+$color-error: #ef4444;
+$color-success: #10b981;
+$color-warning: #f59e0b;
+
+$font-primary:
+  "Inter",
+  system-ui,
+  -apple-system,
+  sans-serif;
+$font-heading:
+  "Outfit",
+  system-ui,
+  -apple-system,
+  sans-serif;
+$font-mono: "JetBrains Mono", monospace;
+
+$radius-sm: 8px;
+$radius-md: 16px;
+$radius-lg: 24px;
+
+$shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+$shadow-glow: 0 0 20px rgba(139, 92, 246, 0.4);
+$transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+// Breakpoints
+$breakpoint-sm: 641px;
+$breakpoint-md: 1024px;
+$breakpoint-lg: 1281px;

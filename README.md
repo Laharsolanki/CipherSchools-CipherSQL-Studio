@@ -2,33 +2,20 @@
 
 CipherSQL Studio is a browser-based SQL learning platform where students can practice SQL queries against pre-configured assignments with real-time execution and intelligent hints from an LLM.
 
-## Architecture & Data Flow
+## Architecture
 
-```mermaid
-graph TD
-    User([User]) -->|Selects Assignment| Frontend
-    Frontend[React Frontend] <-->|API Calls| Backend[Express Backend]
+_(Please refer to the separate [ARCHITECTURE.md](./ARCHITECTURE.md) file for the system architecture and data flow diagrams.)_
 
-    Backend -->|Fetch Assignment Data| MongoDB[(MongoDB Atlas)]
-    MongoDB -->|Returns Schema & Question| Backend
+This project uses a monorepo setup with two main components:
 
-    User -->|Submits SQL Query| Frontend
-    Frontend -->|Send Query| Backend
-    Backend -->|Execute Sandboxed Query| PostgreSQL[(PostgreSQL)]
-    PostgreSQL -->|Returns Results Return| Backend
-    Backend -->|Send Results| Frontend
-
-    User -->|Requests Hint| Frontend
-    Frontend -->|Request Hint| Backend
-    Backend <-->|Generate LLM Hint| LLM{Gemini LLM API}
-    Backend -->|Return Hint| Frontend
-```
+- **Frontend (`/frontend`)**: React.js, Vite, Vanilla SCSS, React-Router, Monaco Editor.
+- **Backend (`/backend`)**: Node.js, Express, Mongoose (MongoDB), `pg` (PostgreSQL), and `@google/generative-ai` (Gemini API).
 
 ### Why these technologies?
 
 - **React.js & Vanilla SCSS**: Provides a modern component-centric framework while adhering to the assignment's explicit requirement for vanilla CSS/SCSS (BEM convention, mobile-first responsiveness).
 - **Express.js & MongoDB**: Express handles the API routing easily, while MongoDB provides flexible storage for Assignment metadata (questions, schemas, etc.).
-- **PostgreSQL**: Used as the sandbox runtime to natively execute standard SQL queries submitted by users. Our implementation securely handles in-memory sandboxing (`pg-mem`) to ensure perfect isolation without local configuration overhead.
+- **PostgreSQL**: Used as the sandbox runtime to natively execute standard SQL queries submitted by users.
 - **Gemini API**: Used as the underlying LLM to generate secure, guiding hints based on prompt engineering without giving away the final SQL answers.
 
 ## Prerequisites
